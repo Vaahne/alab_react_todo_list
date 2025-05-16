@@ -21,8 +21,12 @@ export default function EditTask({task,setToggle}){
             <input type="checkbox" checked={formData.completed} name="completed" onChange={handleChange}/>
             <input type="text" value={formData.task} name="task" onChange={handleChange}/>
             <button onClick={()=>{
-                dispatch({type:'save',payload:formData});
-                setToggle((t)=>!t)
+                if(formData.task == '')
+                    alert('Task cannot be empty');
+                else{
+                    dispatch({type:'save',payload:formData});
+                    setToggle((t)=>!t)
+                }
             }}>Save</button>
         </li>
     </>
