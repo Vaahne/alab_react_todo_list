@@ -8,8 +8,6 @@ export default function EditDeleteTask({task}){
 
     const[complete,setComplete] = useState(task.completed);
 
-
-
     function handleChange(){
         setComplete(complete => !complete);
     }

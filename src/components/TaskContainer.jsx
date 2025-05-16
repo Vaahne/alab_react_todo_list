@@ -1,5 +1,5 @@
 import taskContext from "../context/taskContext";
-import EditDeleteTask from "./EditDeleteTask";
+import EditDeleteTask from "./TaskListItem";
 import { useContext, useEffect } from "react";
 
 export default function TaskContainer(){
