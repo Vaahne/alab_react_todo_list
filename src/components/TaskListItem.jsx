@@ -1,27 +1,33 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import taskContext from "../context/taskContext";
+import EditTask from "./EditTask";
 
-export default function EditDeleteTask({task}){
+export default function TaskListItem({task}){
+    const[toggle,setToggle] = useState(true);
 
     const {tasks , dispatch} = useContext(taskContext);
 
     const[complete,setComplete] = useState(task.completed);
 
     function handleChange(){
-        setComplete(complete => !complete);
+        // setComplete(complete => !complete);
+         dispatch({type: 'save',payload:{id:task.id , task: task.task, completed:!task.completed}});
     }
 
     return <>
-        <li>
-            <input type="checkbox" onChange={handleChange} checked={complete}/>
+    {toggle ? 
+        (<li>
+            <input type="checkbox" onChange={handleChange} checked={task.completed}/>
             {task.task}
-            <button name="edit" onClick={()=>{
-                dispatch({type: 'edit',payload: task.id})
-            }} >Edit</button>
+            <button name="edit" onClick={ () => setToggle((t)=>!t)} >Edit</button>
             <button name="delete" disabled={!complete} onClick={()=>{
-                dispatch({type: 'delete', payload: task.id})
+                if(window.confirm("Are you sure , you want to delete?"))
+                    dispatch({type: 'delete', payload: task.id})
             }}>Delete</button>
         </li>
+        ) : (
+        <EditTask  task={task} setToggle={setToggle} /> )
+    }
     </>
 }

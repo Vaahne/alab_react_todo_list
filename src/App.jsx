@@ -1,15 +1,14 @@
-import { useReducer  } from 'react'
-import existingTasks from './utilities/tasks'
-import './App.css'
-import HeadingLabel from './components/HeadingLabel'
-import AddTodoItem from './components/AddTodoItem'
-import TaskContainer from './components/TaskContainer'
-import taskContext from './context/taskContext'
-import taskReducer from './reducer/taskReducer'
+import { useReducer  } from 'react';
+import existingTasks from './utilities/tasks';
+import './App.css';
+import HeadingLabel from './components/HeadingLabel';
+import AddTodoItem from './components/AddTodoItem';
+import TaskContainer from './components/TaskContainer';
+import taskContext from './context/taskContext';
+import taskReducer from './reducer/taskReducer';
 
 function App() {
-    // const [count, setCount] = useState(0);
-    // const [taskList,setTaskList] = useState(tasks);
+   
     const [tasks,dispatch] = useReducer(taskReducer,existingTasks);
 
   return (
