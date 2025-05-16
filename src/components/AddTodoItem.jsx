@@ -26,6 +26,6 @@ return <>
                 dispatch({type:'add',payload:formData.task});
             else
                 alert('Task cannot be empty!!');
-            }}>Add</button>
+            }} style={{'margin-left' :'1rem'}} >Add</button>
      </>
 }
