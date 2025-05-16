@@ -3,10 +3,32 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: .1rem solid lightcoral;
+  border-radius: 20%;
 }
 li{
   list-style-type: none;
 }
 li>*{
   margin: 1rem;
+}
+button{
+  color: white;
+  font-weight: bold;
+  box-shadow: 1px 1px transparent;
+}
+.add {
+  background: green;
+}
+.delete:enabled{
+  background: lightcoral;
+}
+.delete:disabled{
+  background: transparent ;
+}
+.edit{
+  background: lightsalmon;
+}
+.save{
+  background: blue;
 }

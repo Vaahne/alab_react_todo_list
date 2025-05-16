@@ -20,10 +20,12 @@ export default function AddTodoItem(){
     }
 
 return <>
-        <input type="text" name="task" placeholder="Add task" value={formData.task} onChange={handleChange}/>
-        <button onClick={()=>{
-            if(formData.task != '')
+        <input type="text"  name="task" placeholder="Add task" value={formData.task} onChange={handleChange}/>
+        <button className="add" onClick={()=>{
+            if(formData.task != ''){
                 dispatch({type:'add',payload:formData.task});
+                formData.task="";
+            }
             else
                 alert('Task cannot be empty!!');
             }} style={{'margin-left' :'1rem'}} >Add</button>

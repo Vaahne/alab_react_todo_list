@@ -20,11 +20,11 @@ export default function TaskListItem({task}){
         (<li>
             <input type="checkbox" onChange={handleChange} checked={task.completed}/>
             {task.task}
-            <button name="edit" onClick={ () => setToggle((t)=>!t)} >Edit</button>
-            <button name="delete" disabled={!complete} onClick={()=>{
+            <button name="edit" onClick={ () => setToggle((t)=>!t)} className="edit">Edit</button>
+            <button name="delete" disabled={!task.completed} onClick={()=>{
                 if(window.confirm("Are you sure , you want to delete?"))
                     dispatch({type: 'delete', payload: task.id})
-            }}>Delete</button>
+            }} className="delete">Delete</button>
         </li>
         ) : (
         <EditTask  task={task} setToggle={setToggle} /> )

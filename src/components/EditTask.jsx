@@ -27,7 +27,7 @@ export default function EditTask({task,setToggle}){
                     dispatch({type:'save',payload:formData});
                     setToggle((t)=>!t)
                 }
-            }}>Save</button>
+            }} className="save">Save</button>
         </li>
     </>
 }
