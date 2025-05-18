@@ -8,11 +8,8 @@ export default function TaskListItem({task}){
 
     const {tasks , dispatch} = useContext(taskContext);
 
-    const[complete,setComplete] = useState(task.completed);
-
     function handleChange(){
-        // setComplete(complete => !complete);
-         dispatch({type: 'save',payload:{id:task.id , task: task.task, completed:!task.completed}});
+         dispatch({type: 'save',payload:{...task, completed:!task.completed}});
     }
 
     return <>
