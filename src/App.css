@@ -24,7 +24,7 @@ button{
   background: lightcoral;
 }
 .delete:disabled{
-  background: transparent ;
+  background: blanchedalmond ;
 }
 .edit{
   background: lightsalmon;
