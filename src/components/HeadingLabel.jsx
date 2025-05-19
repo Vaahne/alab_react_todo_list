@@ -1,5 +1,5 @@
 export default function HeadingLabel(){
     return <>
-        <h1>Todo List</h1>
+        <h1 className="heading">Todo List</h1>
     </>
 }

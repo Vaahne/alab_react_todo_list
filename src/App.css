@@ -32,3 +32,7 @@ button{
 .save{
   background: blue;
 }
+.heading{
+  color:darkorange;
+  font-family: fantasy;
+}
